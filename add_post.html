@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add post</title>
+
+
+    <style>
+
+body{
+
+  background: #74ebd5;
+  background: -webkit-linear-gradient(to bottom, #74ebd5, #acb6e5);
+  background: linear-gradient(to bottom, #74ebd5, #acb6e5);
+  font-size: 16px;
+  line-height: 1.2;
+  color: #888;
+   }
+    </style>
+</head>
+<body>
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class ="form-group">
+    {% load crispy_forms_tags %}
+
+
+    <form method = "POST" >
+      {% csrf_token %}
+
+      {{ form.media }}
+      {{ form.as_p }}
+
+        <button type="button" class="btn btn-success">Post</button>
+    </form>
+</div>
+
+
+{% endblock %}
+
+
+
+
+
+</body>

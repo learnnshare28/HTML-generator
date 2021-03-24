@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add post</title>
+</head>
+<body>
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-group">
+  <form method = "POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+    </form>
+</div>
+<button>Post</button>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <style>
+body {
+
+  background-image: url("https://source.unsplash.com/user/erondu/1600x900");
+
+}
+
+.user_card {
+			width: 500px;
+			margin-top: auto;
+			margin-bottom: auto;
+			background-color: DeepBlue ;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+
+			padding: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+
+		}
+
+
+h6 {
+  color: MediumSeaGreen;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px lightBlue;
+  outline: 3px dotted lightBlue;
+  margin-left: 8px;
+}
+  </style>
+</head>
+<body>
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="user_card">
+<ul class="list-group list-group-flush">
+    {% for post in object_list %}
+    <li class="list-group-item"> <a href="{% url 'article_details' post.pk %}"> <h6>{{ post.title }} </h6></a>  - {{ post.author.email }}<br/>
+     </li>
+    {% endfor %}
+</ul>
+</div>
+{% endblock %}
+
+
+
+
+
+</body>
+</html>
